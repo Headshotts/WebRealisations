@@ -1,0 +1,703 @@
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*   HEADER + "Music Learning" hover */
+header{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+/*
+h1{
+    background-color: lightyellow;
+    opacity: 0.6;
+    height: 30px;
+    font-size: 25px;
+    text-align: center;
+    margin: 0 3rem;
+}
+
+h4{
+   background-color: lightyellow;
+   opacity: 0.6;
+   height: 30px;
+   font-size: 25px;
+   text-align: center;
+   margin: 0 3rem; 
+}
+*/
+
+h1, h4{
+    background-color: lightyellow;
+    opacity: 0.6;
+    height: 40px;
+    font-size: 25px;
+    text-align: center;
+    margin: 0 20rem;
+    line-height: 1.5;
+}
+
+h4{
+    font-size: 18px;
+    line-height: 2;
+    color: darkgoldenrod;
+    letter-spacing: 1.5px;
+}
+
+.intro_header{
+    font-size: 17px;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.image_musique_header{
+    background-image: url(../images/atelier_formations_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bandeau{
+    position: absolute;
+    width: 100%;   
+    top: 30%;
+}
+
+/*   MENU */
+ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: black;
+    /*margin-bottom: 3rem;*/
+}
+
+li:nth-of-type(2){
+    background-color: #DDD;   
+}
+
+li a{
+   color: goldenrod;
+    text-decoration: none; 
+}
+
+li:nth-of-type(2) a{
+    color: #000;
+}
+
+li>a:hover{
+    border-top: 2px solid goldenrod;
+    border-bottom: 2px solid goldenrod;
+}
+    
+li:nth-of-type(2)>a:hover{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;  
+}
+
+li{
+    width: 33%;
+    text-align: center;
+    line-height: 4rem;  
+    font-variant-caps: all-small-caps;
+    cursor: pointer;
+}
+
+/* MENU HOVER ACCUEIL */
+.intro_accueil{
+    display: none;
+    font-size: 15px;
+    background-color: #000;
+    color: #FFF;
+    font-style: italic;
+    
+}
+
+.intro_accueil a::before {content: "\2023"; color: darkgoldenrod;}
+
+.intro_accueil a:hover{
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.intro_accueil{
+    border-top: 2px solid goldenrod;
+}
+
+.intro_accueil a{
+    display: inline-block; 
+}
+.accueil:hover .intro_accueil{
+    display: list-item;   
+}
+
+/* MENU HOVER FORMATIONS*/
+
+.intro_formations{
+    display: none;
+    font-size: 15px;
+    color: #000;
+    font-style: italic; 
+}
+
+.intro_formations a::before {content: "\2023"; color: #000;}
+
+.intro_formations a:hover{
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.intro_formations{
+    border-top: 2px solid black;
+}
+.intro_formations a{
+    display: inline-block; 
+}
+.formations:hover .intro_formations{
+    display: list-item;   
+}
+
+/* MENU HOVER CONTACT*/ 
+.intro_contact{
+    display: none;
+    font-size: 15px;
+    background-color: #000;
+    color: #000;
+    font-style: italic; 
+}
+
+.intro_contact a::before {content: "\2023"; color: goldenrod;}
+
+.intro_contact a:hover{
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.intro_contact{
+    border-top: 2px solid goldenrod;
+}
+
+.intro_contact a{
+    display: inline-block;
+}
+
+.contact:hover .intro_contact{
+    display: list-item;  
+}
+/* Display flex boîtes */
+
+.main_accueil{   
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url("../images/notes-musique.jpg");
+    background-color: beige;
+    background-blend-mode: soft-light;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: right;
+    background-attachment: fixed;  
+}
+
+.box, .box_formations{
+    width: 120px;
+    height: 30px;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: goldenrod;
+    line-height: 1.5;
+    border-radius: 5px;   
+    cursor: pointer;
+}
+
+.box a, .box_formations a{
+    color: #000;
+    text-decoration: none;
+}
+
+.flex_accueil{
+    padding-top: 3rem;
+    display: flex;
+    padding-bottom: 3rem;
+}
+
+main>article:hover{
+    opacity: 0.8;
+}
+/* BOÎTE "Qu'est que Music Learning" */
+
+.cadre_accueil_1{
+   margin-left: 1rem;
+   width: 80%;
+   height: auto;
+   background-color: #111;
+   background-size: cover;
+}
+
+h2{
+    line-height: 1.5;
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.25rem;
+    color: goldenrod;
+    font-weight: 600;
+    font-style: italic;
+    border-bottom: 2px solid goldenrod;
+}
+
+.cadre_accueil_1 p{
+    margin-left: 1rem;
+    line-height: 1.4;
+    color: #EEE;
+}
+
+.lien_cadre_noir{
+    color: #EEE;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.lien_cadre_noir:hover{
+    color: goldenrod;
+    font-style: oblique;
+    font-weight: bold;
+    transition: ease 0.5s;
+}
+
+/* BOÎTE "Une nouvelle StartUp : SoundUp" */
+
+.lien_cadre_blanc{
+    color: black;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.cadre_accueil_2 h2{
+    color: #000;
+    border-bottom: 2px solid black;
+}
+
+.lien_cadre_blanc:hover{
+    color: gray;
+    font-style: oblique;
+    font-weight: bold;
+    transition: ease 0.5s;
+}
+
+.cadre_accueil_2{
+   margin-left: 1rem;
+   width: 80%;
+   height: auto;
+   background-color: #FFF;
+   background-size: cover;
+}
+
+main img:nth-of-type(2){
+    margin-top: 3rem;
+}
+
+.cadre_accueil_2 p{
+    color: #000;
+    margin-left: 1rem;
+    line-height: 1.4;
+}
+
+/* BOÎTE "Concerts et réductions chez nos partenaires */
+.cadre_accueil_3{
+   margin-left: 1rem;
+   width: 80%;
+   height: auto;
+   background-color: #111;
+   background-size: cover;
+}
+
+.cadre_accueil_3 p{
+    margin-left: 1rem;
+    line-height: 1.4;
+    color: #EEE;
+}
+
+.flex_accueil img{
+    margin-right: 4rem;
+}
+
+/* FOOTER */
+footer{   
+    height: 180px; /*100px*/
+    background-color: burlywood;
+}
+
+footer a{
+    margin-left: 1rem;
+    line-height: 6;
+    text-decoration: none;
+    color: #000;
+    font-variant-caps: all-small-caps;
+}
+
+footer a:hover{
+    text-decoration: underline overline goldenrod;
+    font-size: 17px;
+    line-height: 5.7;
+    font-weight: 800;
+    font-variant-caps: normal;
+    transition: ease 1s;
+}
+
+footer p{
+    float: right;
+    margin-right: 1rem;
+    line-height: 6;
+    font-variant-caps: all-small-caps;
+}
+
+.social_footer{
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.social_footer img{
+    cursor: pointer;
+}
+
+em{
+    text-decoration: underline;
+}
+/*--------------------------------------------------------FORMATIONS.HTML--------------------------------------------------------*/
+/*--Fond du Main--*/
+.main_formations{   
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url("../images/notes-musique.jpg");
+    background-color: beige; /*gray*/
+    background-blend-mode: soft-light;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: right;
+    background-attachment: fixed;  
+}
+
+.flex_formations{
+    padding-top: 1rem;
+    display: flex;
+    padding-bottom: 1rem;
+    
+}
+
+/*--Bandeau de chaque section--*/
+
+.bandeau_formations_1, .bandeau_formations_3{
+    /*background-image: linear-gradient(goldenrod 0%, bisque 30%, bisque 50%, bisque 65%, goldenrod 85%);
+    height: 70px;
+    margin: 2rem;
+    padding-top: 2rem;*/
+    height: 70px;
+    margin: 2rem;
+    padding-top: 2rem;
+    background-color: goldenrod;
+}
+
+.bandeau_formations_2{
+    /*background-image: linear-gradient(black 0%, grey 30%, grey 50%, grey 65%, black 85%);
+    height: 70px;
+    margin: 2rem;
+    padding-top: 2rem;*/
+    height: 70px;
+    margin: 2rem;
+    padding-top: 2rem;
+    background-color: black;
+}
+
+.bandeau_formations_2 h2{
+    color: white;
+    border-bottom: 2px solid whitesmoke;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.bandeau_formations_1 h2, .bandeau_formations_3 h2{
+    color: black;
+    border-bottom: 2px solid black;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+/*--Contenu de la section--*/
+
+.cadre_formations_1, .cadre_formations_3{
+    background-color: #444444;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.cadre_formations_3, #magasin_img{
+    margin-bottom: 1rem;
+}
+
+.cadre_formations_2{
+    background-color: #BBBBBB;
+    margin-left: 2rem;
+    margin-right : 2rem;
+}
+
+.cadre_formations_1 p, .cadre_formations_2 p, .cadre_formations_3 p{
+    color: #FFFFFF;
+    padding: 1rem;
+    word-spacing: 1.5px;
+    letter-spacing: 1.2px;
+    line-height: 18px;
+}
+
+.main_formations img{
+    margin-right: 2rem;
+}
+
+/*--Informations sur le site prix_formations.html--*/
+.info{
+    font-size: 12px;
+    font-weight: 200;
+}
+
+/*--------------------------------------------------------CONTACT.HTML--------------------------------------------------------*/
+
+/*--Fonctionnement du main*/
+.bg{
+    background-color: beige;
+}
+
+/*--Introduction de la page Contact*/
+h3{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 3rem;
+    background-image: linear-gradient(135deg, dimgray 0%, #BBBBBB 40%, dimgray 90%);
+    height: 50px;
+    line-height: 2;
+    text-decoration: underline;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 25px;
+}
+
+.contact_intro, .contact_partie3{
+    background-image: linear-gradient(gray 0%, #AAAAAA 20%, #AAAAAA 40%, #AAAAAA 60%, #AAAAAA 80%, gray 90%);
+    margin: 0 3rem;
+    margin-top: 3rem;
+    word-spacing: 1.5px;
+    letter-spacing: 1.2px;
+    line-height: 18px;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.contact_intro{
+    margin-bottom: 3rem;
+}
+
+.symbole1, .symbole2, .symbole3{
+    display: none;
+    margin: 3rem 3rem;
+}
+
+.symboles{
+    background-color: beige;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.phrase, .phrase_symbole2{
+    padding: auto;
+    text-align: center;
+}
+.symboles img{
+    border-radius: 10px;
+}
+
+.symbole{
+    cursor: pointer;
+}
+/*--Visibilité et zone d'informations--*/
+.visible{
+    display: block;
+}
+
+.invisible{
+    display: none;
+}
+
+.important{
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: bolder;
+ }
+
+.zone_informations{
+    height: auto;
+    border-bottom: 5px solid black;
+}
+
+.maps{
+    width: 100%;
+    height: 420px;
+}
+
+.symboles{
+    border-bottom: 5px solid black;
+}
+
+.symbole2{
+    text-align: center;
+}
+/*Si ça ne marche pas, mettre .symbole2 p : text-align: center */
+
+.gros{
+    font-weight: 900;
+}
+
+.contact_partie3{
+    margin-bottom: 1.5rem;    
+}
+
+.social_footer, .social{
+    padding-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.symbole2 p{
+    margin-bottom: 2rem;
+}
+
+/*--Lien cadre gris dans le formualire--*/
+.lien_cadre_gris{   
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.lien_cadre_gris:hover{
+    color: yellow;
+    font-style: oblique;
+    font-weight: bold;
+    transition: ease 0.5s;
+}
+
+/*--Formulaire--*/
+.tel>label, .candidature>label, .e-mail>label, .formation>label, .choix_formation_contact>label{
+    margin-left: 3rem;    
+}
+
+#e-mail, #tel, .formation, .choix_formation_contact{
+    width: 300px;
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
+}
+
+#candidature{
+    width: 90%;
+    height: 100px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1rem;
+}
+
+.plein{
+    margin-left: 3rem;
+    font-size: 12px;
+    color: #FF0000;
+}
+
+/*-----------------------------------------------------PRIX_FORMATIONS.HTML----------------------------------------------------*/
+
+.main_prix_formations{
+    background-color: darkgray;
+}
+/*--Formulaire et Phrase d'introduction--*/
+
+#choix_formation{
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 2rem;
+}
+
+.bouton_choix_formation{
+    width: 350px;
+    line-height: 1.7;
+    height: 30px;
+    background-image: linear-gradient(135deg, black 0%, #333333 40%, #333333 70%, black 95%);
+    border-radius: 10px;
+    
+}
+
+#instrument{
+    color: #FFFFFF;
+    margin: 2rem 0;
+    margin-left: 1rem;
+}
+
+/*--Presentation des formations--*/
+.flex_prix_formations{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #000000;
+    color: #FFFFFF;
+    
+}
+
+.formation_1, .formation_2, .formation_3{   
+    width: 33%;
+}
+
+.zone_info_2{
+    border-left: 5px solid goldenrod;
+    border-right: 5px solid goldenrod;
+}
+
+.formation_3{
+    color: goldenrod;
+}
+
+.nom_formation{
+    padding-top: 2rem;
+    text-align: center;
+    font-weight: 400;
+    text-decoration: underline;
+    padding-bottom: 2rem;
+    font-size: 24px;   
+}
+
+.prix{
+    font-size: 40px;
+    text-align: center;
+    font-weight: bolder;
+    padding-bottom: 2rem;
+}
+
+.caracteristiques_dorees p::before {content: "\2023"; color: goldenrod;}
+.caracteristiques p::before {content: "\2023"; color: whitesmoke;}
+
+.caracteristiques p, .caracteristiques_dorees p{
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.inscription{
+    font-size: 14px;
+    color: red;
+    background-color: black;
+    padding: 1rem;
+}
+
+.zone_info, .zone_info_2{
+    height: 500px;
+}

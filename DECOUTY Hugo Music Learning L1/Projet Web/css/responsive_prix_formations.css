@@ -1,0 +1,71 @@
+ @media screen and (max-width: 1024px){
+/*Version MOBILE*/
+     
+     /*PRIX-FORMATIONS.HTML*/
+      * {
+		box-sizing: border-box;
+	}
+    
+    .accueil:hover .intro_accueil, .formations:hover .intro_formations, .contact:hover .intro_contact{
+        display: none;
+    }
+     
+     .intro_accueil a, .intro_formations a, .intro_contact a, main img{
+         display: none;
+     }
+     
+     .box{
+         margin:auto;
+         margin-top: 1rem;
+         margin-bottom: 1rem;
+     }
+
+     .cadre_accueil_1, .cadre_accueil_2, .cadre_accueil_3{
+         margin: auto;
+         opacity: 0.8;
+     }
+     
+     .image_musique_header{
+         background-position: 75%;
+     }
+     
+     h1, h4{
+         margin: 0 3rem;
+     }
+     
+     /*-PRIX_FORMATIONS.html-*/
+    .bouton_choix_formation{
+        margin: auto;
+        width: 180px;
+        line-height: 1.7;
+        height: 30px;
+        background-image: background-image: -webkit-linear-gradient(top left, black 0%, #333333 40%, #333333 70%, black 95%);
+        background-image: background-image: -o-linear-gradient(top left, black 0%, #333333 40%, #333333 70%, black 95%);
+        background-image: background-image: linear-gradient(to bottom right, black 0%, #333333 40%, #333333 70%, black 95%);
+        border-radius: 10px;
+        text-align: center;
+    
+}
+     
+    .bouton_choix_formation>label{
+        display: none;   
+    }
+
+     .formation_1, .formation_2, .formation_3{
+         width: 100%;
+         margin: 1rem 0;
+         border: none;
+         border-top: 4px solid goldenrod;
+         margin-bottom: 0.5rem;
+     }
+     
+     .zone_info, .zone_info_2{
+        height:auto;
+        border: none;
+     }
+     
+     .inscription{
+         padding-top: 2rem;
+     }
+
+}
