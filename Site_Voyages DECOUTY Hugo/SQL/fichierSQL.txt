@@ -1,0 +1,72 @@
+drop table if exists clients, destination, reservations;
+
+create table clients(
+	id_client serial primary key,
+	nom varchar(30) not null,
+	prenom varchar(30) not null,
+	mdp varchar(20) not null,
+	mail varchar(80) default null,
+	tel varchar(14) not null,
+	handicap char(1) default 'N',
+	statut varchar(5) default 'User'
+);
+
+create table destination(
+	id_destination serial primary key,
+	nom varchar(30) not null,
+	description varchar(300) not null,
+	transport varchar(10) default 'Autres',
+	nb_places integer not null,
+	prix decimal(7,2) not null,
+	handicap char(1) default 'N',
+	image varchar(50) not null default 'images/image_default.jpg'
+);
+
+create table reservations(
+	id_reservation serial primary key,
+	date_reservation date not null,
+	duree_voyage int,
+	nombre_personnes int,
+	id_destination integer not null,
+	unique(id_destination),
+	id_client integer not null,
+	unique(id_client),
+	foreign key (id_destination) references destination(id_destination) ON DELETE CASCADE,
+	foreign key (id_client) references clients(id_client) ON DELETE CASCADE
+);
+
+create table reservations(
+	id_reservation serial primary key,
+	date_debut date not null,
+	date_fin date not null default date_debut + 1,
+	nombre_personnes int,
+	nb_handicapes int default null,
+	nb_billets_Eco int default null,
+	nb_billets_Premium int default null,
+	nb_billets_Affaires int default null,
+	id_destination integer not null,
+	unique(id_destination),
+	id_client integer not null,
+	unique(id_client),
+	foreign key (id_destination) references destination(id_destination) ON DELETE CASCADE,
+	foreign key (id_client) references clients(id_client) ON DELETE CASCADE
+);
+
+INSERT INTO `clients` (`id_client`, `nom`, `prenom`, `mdp`, `mail`, `tel`, `handicap`, `statut`) VALUES
+(16, 'Guerry', 'Simon', 'fifa2020', 'rastavroumvroum@gmail.com', '06-47-27-37-16', 'N', 'User'),
+(13, 'monNom', 'monPrenom', 'monMdp', 'monEmail@gmail.com', '00-00-00-00-00', 'Y', 'User'),
+(14, 'Decouty', 'Hugo', 'oui', 'oui@gmail.com', '05-27-16-25-36', 'Y', 'Admin'),
+(18, 'Juju', 'Baptou', 'mdp', 'jujubaptou@gmail.com', '05-36-21-71-44', 'Y', 'User'),
+(22, 'Cahuzac', 'Jérôme', 'prison', 'enprisonmdr@gmail.com', '05-05-05-05-05', 'N', 'User');
+
+INSERT INTO `destination` (`id_destination`, `nom`, `description`, `transport`, `nb_places`, `prix`, `handicap`) VALUES
+(1, 'Voyage en Grèce', 'description1', 'Avion', 350, '0.00', 'Y'),
+(2, 'Voyage en Egypte', 'description2', 'Bateau', 130, '0.00', 'Y'),
+(3, 'Voyage au coeur de l\'Amérique', 'description3', 'Avion', 50, '0.00', 'N'),
+(4, 'Voyage à travers l\'Amazone', 'description4', 'Route', 100, '0.00', 'Y'),
+(5, 'Voyage au Japon', 'description5', 'Avion', 250, '0.00', 'Y'),
+(6, 'Voyage Paradisiaque', 'description6', 'Autres', 20, '0.00', 'N'),
+(7, 'Voyage à travers la Sibérie', 'description7', 'Train', 140, '0.00', 'N'),
+(8, 'Voyage à travers la Belgique', 'description8', 'Train', 400, '0.00', 'Y'),
+(9, 'Voyage au coeur du continent a', 'description9', 'Bateau', 120, '0.00', 'Y'),
+(10, 'Voyage en Antarctique', 'description10', 'Bateau', 200, '299.00', 'Y');
