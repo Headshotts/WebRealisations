@@ -1,0 +1,16 @@
+DataBase
+PDO
+Clients
+Réservations
+Séjour
+
+Model (requêtes SQL...)
+indexView.php : la vue (page HTML)
+index.php (chef d'orchestre qui appelle Model et indexView.php)
+
+
+
+
+controlleur appelle MODEL et VIEW -> VIEW contient l'agencement des éléments appelés.
+
+Dans les INDEX on fait un require view... à l'endroit où on veut l'agencement dans la page.

@@ -1,0 +1,885 @@
+/*CTRL + F5 pour recharger la page en nettoyant le cache*/
+/* Tout mettre dans l'ordre alphabétique */
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: darkred;
+}
+
+a:visited{
+    color: darkred;
+}
+
+.cache{
+    opacity : 0;
+    
+}
+
+.visible{
+    opacity : 1;
+}
+/* ---HEADER--- */
+.cadre_header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-image: linear-gradient(deepskyblue, dodgerblue);
+    /*background-image: linear-gradient(lightgray, darkgray);*/
+    color: white;
+    height: 20vh;
+    width: 100%;
+    z-index: 1000;
+}
+
+.cadre_header a{
+    text-decoration: none;
+    font-style: oblique;
+    font-variant: all-small-caps;
+    color: white;
+    font-size: 18px; /*18px si zoom 100%*/
+    cursor: pointer;
+}
+
+#image_header{
+    width: 25%;
+}
+#image_header img{
+    height: 20vh;
+    overflow: hidden;
+
+}
+
+#ul-header{
+    margin-left: 5%;
+    padding-top: 12vh;
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+#ul-header>li{
+    /*display: inline;*/
+    width: 25%;
+    border-left: 1px solid white;
+    text-align: center;
+    height: 40px; /* de base : auto */
+    line-height: 1.5;
+}
+
+#ul-header>#li_connexion{
+    width: 40%;
+    line-height: 1;
+}
+
+/*  Placement du main pour que le header fixé et le main ne se superposent pas */
+main{
+    margin-top: 28vh;
+}
+
+header{
+    position: relative;
+
+}
+
+.flex{
+    display: flex;
+}
+
+/* ------------------------GERER_BDD-------------- */
+
+/* Suppression des margins pour que tout le contenu soit sur une page */
+#body-gerer{
+    margin-bottom: 8rem;
+}
+
+/* Contenu du flex | Positionnement + Bordures */
+.flex_gerer{
+    width: 50%;
+}
+
+.flex_gerer:nth-of-type(2){
+    border-left: 3px solid goldenrod;
+    height: 500px;
+}
+/* Cadre du h2 de chaque flex */
+.h2_gerer{
+    background-color: orange;
+    /*background-color: lightgray;*/
+    border-radius: 30px;
+    height: 40px;
+    margin: 0 20% 2rem;
+    text-align: center;
+
+}
+
+/* Esthétique du h2 de chaque flex */
+.h2_gerer>h2{
+    line-height: 1.8;
+    font-size: 20px;
+}
+
+/* Cadre du contenu des formulaires de chaque flex */
+.content{
+    background: #FBC664;
+    /*background: gainsboro;*/
+    height: 500px;
+    margin: 0 15%; /* De base 10% */
+    border-radius: 45px;
+    position: relative;
+}
+
+/* Esthétique du content et du textarea */
+.content>form, .content p{
+    padding-top: 1rem;
+}
+
+.content p{
+    margin: 0 10%;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+}
+
+#prix{
+    width: 36%;
+}
+/* Positionnement du submit */
+.zone_submit{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage horizontal de l'élément absolute - ALSACREATIONS */
+    bottom: 5%;
+
+}
+
+#destination{
+    width: 200px;
+}
+
+/* -----------------------LOGIN.PHP ---------------- */
+
+.erreur-login{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    margin-bottom: 1rem;
+    top: -25px;
+}
+
+.erreur-login img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur-login p{
+    font-size: 20px;
+}
+
+#form-login{
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 50px 0px 50px 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 20%;
+}
+
+#form-login>fieldset{
+    padding: 30px 60px 20px 60px;
+}
+
+#form-login>fieldset>p{
+    line-height: 1.6;
+}
+
+#submit-login{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#btnSubmit-connexion{
+    background-color: dimgray;
+    color: white;
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#btnSubmit-connexion:hover{
+    transition: 2s;
+    background-color: snow;
+    color: #000000;
+}
+
+/* -----------------------MONPROFIL.PHP------------- */
+
+#table_reservation{
+    width: 60%;
+    margin: auto;
+    border: 2px solid black;
+    border-collapse: collapse;
+
+}
+
+#table_reservation th{
+    border: 2px solid black;
+    border-bottom: 3px solid black;
+    padding: 1em;
+}
+
+#tr_reservation{
+    text-align: center;
+}
+
+#tr_reservation td{
+    padding: 1em;
+}
+
+#tr_reservation td img{
+    float: left;
+}
+
+#form-profile, #reserv-profile{
+    border-bottom: 2px solid goldenrod;
+    margin: 0 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+#reserv-profile{
+    border: none;
+}
+
+#nb-reserv-profile{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#form-profile p{
+    margin-top: 1rem;
+}
+
+.erreur-profile{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-bottom: 1rem;
+}
+
+.erreur-profile img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur-profile p{
+    font-size: 18px;
+}
+
+#btnSubmit-profile{
+    margin-top: 1rem;
+    background-color: dimgray;
+    color: white;
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#btnSubmit-profile:hover{
+    transition: 2s;
+    background-color: snow;
+    color: #000000;
+}
+
+/* ------------------------SEJOUR.PHP-------------- */
+/*L'image ne suit pas la div, elle le dépasse... Donc overflow : hidden */
+
+.flex_sejour{
+    display: flex;
+    justify-content: space-between;
+}
+.flex_dest{
+    width: 50%;
+    margin-top: 4rem;
+    overflow: hidden;
+}
+
+.flex_dest:nth-of-type(2){
+    width: 50%;
+    margin-left: 2%;
+}
+
+#cadre_titre{
+    display:inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 2px solid darkcyan;
+}
+
+#nom_dest{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+}
+
+/* Positionnement de l'image dans le flex */
+#image_dest{
+    min-width: 400px;
+    width: auto;
+    max-width: 500px;
+    height: 450px;
+    margin-left: 20%;
+}
+
+#description_sejour{
+    border-left : 2px solid deepskyblue;
+    border-top: 2px solid dodgerblue;
+    /* haut | droit | bas | gauche */
+    font-size: 20px;
+    word-spacing: 0.5em;
+    line-height: 1.4em;
+    word-break: keep-all;
+    margin-right: 20%;
+    margin-bottom: 3rem;
+    text-indent: 20px;
+}
+
+.infos_dest{
+    display: list-item;
+    font-weight: 300;
+    font-size: 18px;
+    font-variant: all-small-caps;
+    margin-bottom: 0.5rem;
+}
+
+.infos_dest::before{
+    content: "\A4 \ "; /* Caractère ISO */
+}
+
+#prix_dest{
+    font-weight: bolder;
+    font-size: 24px; /* 30px si zoom 90% */
+    padding-top: 3rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.button_reserv, .button_reserv_complete{
+    font-size: 24px;
+    align-self: center;
+    width: 500px;
+    height: 26px;
+    background-color: lawngreen;
+    color: white;
+    font-variant: all-small-caps;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.button_reserv_complete{
+    background-color: grey;
+    color: black;
+}
+
+.button_reserv a, .button_reserv_complete a{
+    color: black;
+}
+/* --- REGISTER.PHP --- */
+
+main{
+    position: relative;
+}
+
+.erreur_register{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: -100%;
+    margin-bottom: 1rem;
+}
+
+.erreur_register:nth-of-type(2){
+    top: -30%; /* Aesthetic for double error Register if e-mail already exists AND password is invalid */
+}
+
+.erreur_register img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur_register p{
+    font-size: 20px;
+}
+
+#form-register{
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 50px 0 50px 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#form-register>fieldset{
+    padding: 30px 60px 20px 60px;
+}
+
+#form-register>fieldset>p{
+    line-height: 1.6;
+}
+
+#submit-register{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#btnSubmit-register{
+    background-color: dimgray;
+    color: white;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2.5px;
+}
+
+#btnSubmit-register:hover{
+    transition: 2s;
+    background-color: snow;
+    color: #000000;
+    letter-spacing: 3px;
+}
+/* --- RESERVATIONS.PHP  --- */
+
+.erreur_reserv{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translate(-50%, 0%);
+}
+
+.erreur_reserv img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur_reserv p{
+    font-size: 20px;
+}
+
+/* ------------ PRESENTATION_VOYAGES.PHP -------------- */
+
+#empty-show-voyages{
+    text-align: center;
+}
+
+#background-form-show-voyages{
+    background-color: #FFFF00;
+    padding: 1rem;
+    margin: 1rem 3rem 2rem 3rem;
+    border-radius: 20px;
+}
+
+#form-show-voyages{
+    text-align: center;
+    background-color: #FFFF40;
+    /*margin: 1rem 3rem 2rem 3rem;*/
+    border-radius: 20px;
+}
+
+#div-flex-border-form-show-voyages{
+    display: flex;
+}
+
+.border-form-show-voyages{
+    width: 25%;
+    margin-left: 1rem;
+    border-left: 1px solid black;
+    padding: 1.5rem;
+}
+
+.border-form-show-voyages:nth-of-type(1){
+    border: none;
+}
+
+#nbplaces-show-voyages, #transport-show-voyages, #prix-show-voyages{
+    margin-top: 1em;
+    width: 100%;
+    height: 30px;
+}
+
+#checkbox-form-show-voyages{
+    padding: 1rem 0;
+}
+
+.border-form-show-voyages:nth-of-type(4){
+    position: relative;
+}
+
+#btnSubmit-show-voyages{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    background-color: dimgray;
+    color: white;
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#btnSubmit-show-voyages:hover{
+    transition: 2s;
+    background-color: snow;
+    color: #000000;
+}
+
+
+
+
+#h2-show{
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+.flex-voyages{
+    display: flex;
+}
+
+#flex-voyage-1, #flex-voyage-2{
+    width: 50%;
+}
+
+.ul-voyages{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.ul-voyages>li{
+    border: 2px solid black;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem 2rem 1rem;
+}
+
+.show_more_voyages{
+    border: 2px solid white;
+    text-align: center;
+    background-color: lightgray;
+    width: 140px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 3px;
+}
+
+.show_more_voyages a{
+    text-decoration: none;
+    line-height: 2.2;
+    color: black;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
+.show_more_voyages:hover{
+    transition: 1s;
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    font-weight: bolder;
+}
+
+.ul-voyages>li>h3{
+    font-size: 25px;
+    font-weight: bolder;
+    font-variant-caps: all-small-caps;
+}
+
+/*Description + Symboles*/
+.ul-voyages li p:nth-of-type(1), #symbols-voyages{
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+/* Prix */
+#flex-voyage-2 p:nth-of-type(1){
+    font-weight: 600;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+/*Nombre de places*/
+#flex-voyage-2 p:nth-of-type(2){
+    text-align: right;
+}
+
+#complete_reserv{
+    color: black;
+    font-weight: 800;
+    background-color: bisque;
+    padding: 0.2rem 0.5rem;
+}
+
+#almost-complete_reserv{
+    background-color: indianred;
+    font-weight: bolder;
+    padding: 0.2rem 0.5rem;
+}
+
+/* --- RESERVATIONS.PHP --- */
+
+#info_reserv{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: oblique;
+}
+#form-reserv{
+    border: 2px solid black;
+    padding: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 30px 0;
+}
+
+#form-reserv p{
+    margin-bottom: 0.8rem;
+}
+
+#form-reserv p:nth-of-type(3), #handicap-p{ /* nth-of-type(3) -> Date_reservation */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid goldenrod;
+}
+
+#form-reserv label{
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}
+
+#billet{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+}
+
+#billet input{
+    width: 50px;
+}
+#economic, #business, #premium, #handicap_reserv{
+    width: 35px;
+    margin: 0.5rem 0.5em 0 2em;
+
+}
+
+#resultat-reserv{
+    display: inline-block;
+    background-color: RGBA(220, 220, 220, 0.5);
+    padding: 1rem;
+    border: 1px solid black;
+    font-weight: 500;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#economic{
+    margin-left: 0;
+}
+
+#submit-reserv input{
+    background-color: whitesmoke;
+    color: black;
+    font-size: 20px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 1.5px;
+}
+
+#submit-reserv input:hover{
+    transition: 2s;
+    background-color: #020202;
+    color: white;
+    font-size: 20px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 1.5px;
+}
+
+/* --- FOOTER.PHP --- */
+#relative-footer{
+    position: relative;
+}
+
+body {
+    margin-bottom: 10rem;
+}
+
+
+footer{
+    margin-top: 2rem;
+    background-color: dodgerblue;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    clear: both;
+}
+
+footer p{
+    color: whitesmoke;
+    padding: 0 3rem;
+    line-height: 10vh;
+    letter-spacing: 1.2px;
+}
+
+footer p:nth-of-type(1){
+    float: left;
+}
+
+footer p:nth-of-type(2){
+    float: right;
+}
+
+/* --- INDEX.PHP --- */
+#index-title{
+    font-size: 40px;
+    letter-spacing: 1.3px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 3rem;
+}
+
+h1{
+    font-variant-caps: all-small-caps;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.index-flex{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 12rem;
+    /*border: 2px solid black;*/
+    margin-bottom: 4rem;
+}
+
+
+.index-subflex:nth-of-type(1){
+    width: 25%;
+    overflow: hidden;
+    border-right: 2px solid goldenrod;
+}
+
+.index-subflex:nth-of-type(2){
+    width: 65%; /* 55% si zoom 90% */
+    word-break: keep-all;
+    padding: 0 2rem;
+    line-height: 1.5;
+}
+
+.index-subflex:nth-of-type(2) h1{
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.index-subflex:nth-of-type(2) p{
+    font-size: 16px;
+    padding-bottom: 1rem;
+}
+
+/* --- REMBOURSEMENT.PHP --- */
+
+#cadre-remboursement{
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: absolute;
+    width: 60%;
+    min-width: 60%;
+    left: 50%;
+    padding: 3rem;
+    transform: translate(-50%, 0%);
+    background-color: RGBA(173,173,173, 0.6);
+}
+
+#cadre-remboursement p{
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+#buttons-remboursement{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+#rembourser{
+    background-color: forestgreen;
+    color: black;
+    padding: 1rem;
+    cursor: pointer;
+    border: 1px solid green;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#buttons-remboursement a{
+    background-color: indianred;
+    color: black;
+    font-size: 20px;
+    padding: 0 1rem;
+    padding-top: 1.2rem;
+    /*line-height: 2.9;*/
+    border: 1px solid palevioletred;
+}
+
+#rembourser:hover{
+    font-weight: 600;
+    border: 2px solid darkgreen;
+    text-decoration: underline;
+}
+
+#buttons-remboursement a:hover{
+    font-weight: 600;
+    border: 2px solid darkred;
+    text-decoration: underline;
+}
+
