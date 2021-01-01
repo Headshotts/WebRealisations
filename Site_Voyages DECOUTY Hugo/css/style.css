@@ -1,0 +1,297 @@
+/*CTRL + F5 pour recharger la page en nettoyant le cache*/
+/* Tout mettre dans l'ordre alphabétique */
+html{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cache{
+    opacity : 0;
+    
+}
+
+.visible{
+    opacity : 1;
+}
+/* ---HEADER--- */
+.cadre_header{
+    display: flex;
+    position: fixed;
+    top: 0%;
+    background-color: #000000;
+    color: white;
+    height: 20vh;
+    width: 100%;
+}
+
+.cadre_header a{
+    text-decoration: none;
+    font-style: oblique;
+    font-variant: all-small-caps;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+#image_header{
+    width: 25%;
+}
+#image_header img{
+    width: 100%;
+    height: 20vh;
+
+}
+
+ul{
+    margin-left: 5%;
+    padding-top: 12vh;
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+
+
+}
+li{
+    /*display: inline;*/
+    width: 25%;
+    border-left: 1px solid white;
+    text-align: center;
+    height: 40px; /* de base : auto */
+    line-height: 1.5;
+}
+
+#li_connexion{
+    width: 40%;
+    line-height: 1;
+}
+
+/*  Placement du main pour que le header fixé et le main ne se superposent pas */
+main{
+    margin-top: 28vh;
+}
+
+header{
+    position: relative;
+
+}
+
+.flex{
+    display: flex;
+}
+
+/* ------------------------GERER_BDD-------------- */
+
+/* Contenu du flex | Positionnement + Bordures */
+.flex_gerer{
+    width: 50%;
+}
+
+.flex_gerer:nth-of-type(2){
+    border-left: 3px solid goldenrod;
+    height: 500px;
+}
+/* Cadre du h2 de chaque flex */
+.h2_gerer{
+    background-color: lightgray;
+    border-radius: 30px;
+    height: 40px;
+    margin: 0 20% 2rem;
+    text-align: center;
+
+}
+
+/* Esthétique du h2 de chaque flex */
+.h2_gerer>h2{
+    line-height: 1.8;
+    font-size: 20px;
+}
+
+/* Cadre du contenu des formulaires de chaque flex */
+.content{
+    background: gainsboro;
+    height: 500px;
+    margin: 0 15%; /* De base 10% */
+    border-radius: 45px;
+    position: relative;
+}
+
+/* Esthétique du content et du textarea */
+.content>form, .content p{
+    padding-top: 1rem;
+}
+
+.content p{
+    margin: 0 10%;
+}
+
+textarea{
+    width: 100%;
+    height: 100px;
+}
+/* Positionnement du submit */
+.zone_submit{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage horizontal de l'élément absolute - ALSACREATIONS */
+    bottom: 5%;
+
+}
+
+/* -----------------------MONPROFIL.PHP------------- */
+
+#table_reservation{
+    width: 50%;
+    margin: auto;
+    border: 2px solid black;
+    border-bottom: none;
+    border-collapse: collapse;
+
+}
+
+#table_reservation th{
+    border: 2px solid black;
+    border-bottom: 3px solid black;
+    padding: 1em;
+}
+
+#tr_reservation{
+    text-align: center;
+
+}
+
+#tr_reservation td{
+    padding: 1em;
+}
+
+/* ------------------------SEJOUR.PHP-------------- */
+/*L'image ne suit pas la div, elle le dépasse... Donc overflow : hidden */
+
+.flex_sejour{
+    display: flex;
+    justify-content: space-between;
+}
+.flex_dest{
+    width: 50%;
+    margin-top: 4rem;
+    overflow: hidden;
+}
+
+.flex_dest:nth-of-type(2){
+    width: 50%;
+    margin-left: 2%;
+}
+
+#cadre_titre{
+    display:inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom: 2px solid darkcyan;
+}
+
+#nom_dest{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+}
+
+/* Positionnement de l'image dans le flex */
+#image_dest{
+    min-width: 400px;
+    width: auto;
+    max-width: 500px;
+    height: 450px;
+    margin-left: 20%;
+}
+
+#description_sejour{
+    border-left : 2px solid deepskyblue;
+    border-top: 2px solid dodgerblue;
+    /* haut | droit | bas | gauche */
+    font-size: 20px;
+    word-spacing: 0.5em;
+    line-height: 1.4em;
+    word-break: keep-all;
+    margin-right: 20%;
+    margin-bottom: 3rem;
+    text-indent: 20px;
+}
+
+.infos_dest{
+    display: list-item;
+    font-weight: 300;
+    font-size: 18px;
+    font-variant: all-small-caps;
+    margin-bottom: 0.5rem;
+}
+
+.infos_dest::before{
+    content: "\A4 \ "; /* Caractère ISO */
+}
+
+#prix_dest{
+    font-weight: bolder;
+    font-size: 30px;
+    padding-top: 3rem;
+    text-align: center;
+    margin-right: 20%;
+    margin-bottom: 1rem;
+}
+
+#economic, #business, #premium, #handicap_reserv{
+    width: 35px;
+    margin-top: 0.5rem;
+    margin-left: 2em;
+}
+.button_reserv{
+    font-size: 24px;
+    align-self: center;
+    width: 500px;
+    height: 26px;
+    background-color: lawngreen;
+    color: white;
+    font-variant: all-small-caps;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: auto;
+    margin-top: 3rem;
+}
+/* --- REGISTER.PHP --- */
+.erreur_register{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+}
+
+.erreur_register img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur_register p{
+    font-size: 20px;
+}
+/* --- RESERVATIONS.PHP  --- */
+
+.erreur_reserv{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+}
+
+.erreur_reserv img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur_reserv p{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
