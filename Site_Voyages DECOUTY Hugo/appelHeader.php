@@ -41,8 +41,8 @@ $connexion = connexionBd();
 <body>
 <header>
     <nav class="cadre_header">
-        <div id="image_header"><img src="images/site/bora-bora-685303_640.jpg"></div>
-        <ul>
+        <div id="image_header"><img src="images/site/header-image.svg"></div>
+        <ul id="ul-header">
             <li><a href="index.php">Accueil</a></li>
             <li><a href="presentation_voyages.php">Voyages</a></li>
             <?php if($header_admin):?>

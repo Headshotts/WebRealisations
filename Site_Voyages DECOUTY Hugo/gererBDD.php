@@ -22,10 +22,10 @@
                 $image = $dest_fichier . $_FILES['voyage']['name'];
                 move_uploaded_file($_FILES['voyage']['tmp_name'], $dest_fichier . $_FILES['voyage']['name']);
                 if($image == "images/"){ //Si il n'y a pas d'image choisi, on prend celle par défaut.
-                    $image = "images/image_default.jpg";
+                    $image = "images/default.jpg";
                 }
                 //On ajoute la destination à la BDD.
-                $ajout_requete = $connexion->prepare("INSERT INTO destination(nom, description, transport, nb_places, prix, handicap, image) VALUES (:nom, :description, :transport, :nb_places, :prix, :handicap, :image)");
+                $ajout_requete = $connexion->prepare("INSERT INTO destination(nom, description, transport, nbplaces, prix, handicap, image) VALUES (:nom, :description, :transport, :nb_places, :prix, :handicap, :image)");
                 $ajout_requete->bindParam(':nom', $nom);
                 $ajout_requete->bindParam(':description', $description);
                 $ajout_requete->bindParam(':transport', $transport);
@@ -51,7 +51,7 @@
     if(isset($_POST['submit_retrait'])){
         $enlever_voyage = $_POST['destination'][0];
 
-        $enlever_requete = $connexion->prepare("DELETE FROM destination WHERE id_destination = :id");
+        $enlever_requete = $connexion->prepare("DELETE FROM destination WHERE iddestination = :id");
         $enlever_requete->bindParam(':id', $enlever_voyage);
         $enlever_requete->execute();
 
@@ -88,11 +88,11 @@
                 <form method="post" action="gererBDD.php" enctype="multipart/form-data">
                     <p>
                         <label for="nom">Nom du voyage :</label>
-                        <input type="text" size="30" name="nom" id="nom" required>
+                        <input type="text" size="40" name="nom" id="nom" placeholder="(40 caractères maximum)" required>
                     </p>
                     <p>
                         <label for="description">Description : </label>
-                        <textarea type="text" name="description" id="description" placeholder="Présenter le trajet, les réservations possibles, les qualités du trajet, le prix..." required></textarea>
+                        <textarea type="text" name="description" id="description" placeholder="Présenter le trajet, les réservations possibles, les qualités du trajet, le prix... (300 caractères maximum)" required></textarea>
                     </p>
                     <p>
                         <label for="transport[]">Type de transport : </label>
@@ -119,12 +119,11 @@
                     </p>
                     <p>
                         <label for="voyage">Image du voyage (libre de droit !)</label>
-                        <input type="file" name="voyage">
+                        <input type="file" name="voyage" accept="image/jpeg, image/png">
                     </p>
                     <div class="zone_submit">
                         <input type="submit" name="submit_ajout" value="Ajouter le voyage">
                     </div>
-                    <!-- Rajouter image !-->
                 </form>
             </div>
 

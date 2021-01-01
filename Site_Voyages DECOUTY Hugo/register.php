@@ -67,30 +67,32 @@
             <div class="erreur_register"><p><img src="images/site/danger.jpg">E-mail déjà utilisé.</p></div><br>
        <?php endif;?>
        <?php if($erreur_mdp):?>
-            <div class="erreur_register"><p><img src="images/site/danger.jpg">Veuillez recommencer, les deux mots de passe n'étaient pas les mêmes.</p></div><br>
+            <div class="erreur_register"><p><img src="images/site/danger.jpg">Veuillez recommencer, les deux mots de passe ne sont pas identiques.</p></div><br>
        <?php endif;?>
-        <form method="POST" action="register.php">
+        <form id="form-register" method="POST" action="register.php">
             <fieldset>
                 <p>
                     <label for="nom">Votre nom :</label> <!-- Si la personne est connectée, écrire directement son nom dans le formulaire !-->
-                    <input type="text" id="nom" name="nom" required autofocus> <!--Mettre $_SESSION['nom'];!-->
+                    <input type="text" id="nom" name="nom" placeholder="(20 caractères maximum)" required autofocus> <!--Mettre $_SESSION['nom'];!-->
                 </p>
                 <p>
                     <label for="prenom">Votre prénom : </label>
-                    <input type="text" id="prenom" name="prenom" required>
+                    <input type="text" id="prenom" name="prenom" placeholder="(15 caractères maximum)" required>
                 </p>
                 <p>
                     <label for="mdp">Votre mot de passe : </label>
-                    <input type="password" id="mdp" name="mdp" required>
+                    <input type="password" id="mdp" name="mdp" placeholder="(20 caractères maximum)" required>
                 </p>
+                <p>
                     <label for="mdp_c">Confirmez votre mot de passe : </label>
                     <input type="password" id="mdp" name="mdp_c" required>
+                </p>
                 <p>
-                    <label for="mail">Votre email</label> <!-- Mail bug, on peut ne pas mettre '.com' ou '.fr' ex: 'jerem@gsdd' !-->
+                    <label for="mail">Votre email : </label> <!-- Mail bug, on peut ne pas mettre '.com' ou '.fr' ex: 'jerem@gsdd' !-->
                     <input type="email" id="mail" name="mail">
                 </p>
                 <p>
-                    <label for="tel">Votre numéro de téléphone</label>
+                    <label for="tel">Votre numéro de téléphone : </label>
                     <input type="tel" id="tel" name="tel" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder="exemple : '00-00-00-00-00'" required>
                 </p>
                 <p>
@@ -98,9 +100,9 @@
                     <input type="radio" id="handicap" name="handicap[]" value="Y">Oui <!-- Si il y'a un cochage du "oui", demander un justificatif relais handicap par PHP? ou juste un message !-->
                     <input type="radio" id="handicap" name="handicap[]" value="N" checked="checked">Non
                 </p>
-                <p>
-                    <label for="submit">S'inscrire</label>
-                    <input type="submit" name="btnSubmit" id="btnSubmit" value="Envoi" />
+                <p id="submit-register">
+                    <!--<label for="submit">S'inscrire</label>-->
+                    <input type="submit" name="btnSubmit" id="btnSubmit-register" value="S'inscrire" />
                 </p>
             </fieldset>
         </form>

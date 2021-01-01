@@ -55,14 +55,18 @@
     <?php require_once("appelHeader.php");?>
 </header>
 <main>
-    <p>Souhaitez-vous vraiment vous faire rembourser le voyage : <?=$nom->nom?> ? </p>
-    <form method="post" action="remboursement.php?id_reservation=<?=$_GET['id_reservation']?>&id_destination=<?=$_GET['id_destination']?>">
-        <input type="submit" name="rembourser" id="rembourser" value="Oui, je veux être remboursé">
-        <a href="mon_profil.php?id=<?=$_SESSION['id']?>">Retourner sur mon profil</a>
-    </form>
+    <div id="cadre-remboursement">
+        <p>Souhaitez-vous vraiment vous faire rembourser le voyage : <?=$nom->nom?> ? </p>
+        <div id="buttons-remboursement">
+            <form method="post" action="remboursement.php?id_reservation=<?=$_GET['id_reservation']?>&id_destination=<?=$_GET['id_destination']?>">
+                <input type="submit" name="rembourser" id="rembourser" value="Oui, je veux être remboursé">
+            </form>
+            <a href="mon_profil.php?client=<?=$_SESSION['id']?>">Retourner sur mon profil</a>
+        </div>
+    </div>
 </main>
 <?php require_once("footer.php");?>
-<script text="text/javascript" src="js/comportement.js"></script>
+<script type="text/javascript" src="js/comportement.js"></script>
 </body>
 
 

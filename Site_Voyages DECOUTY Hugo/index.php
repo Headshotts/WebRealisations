@@ -2,20 +2,15 @@
 
 //Page d'accueil du serveur. Permet à la fois d'accéder à l'inscription, à la (dé)connexion des utilisateurs mais aussi à la réservation potentielle.
 
-/*      --AMELIORATIONS--
-    <->Mettre un cookie en fonction de la dernière page voyage visitée par le client.
-    <->Afficher trois ou quatres voyages au hasard avec leur description + bouton EN SAVOIR PLUS qui mène à la page du voyage, qui elle même possède le bouton RESERVATION (si on peut encore réserver ce voyage -> encore de la place)
-    <->Afficher la, ou les réservations du client sous forme de message avec un lien menant à la page voyage correspondante.
-    <->BDD : Mettre les équivalents du SIMILAR TO à tous les attributs qui en ont besoin + rajouter la colonne STATUT à la table Client.
-*/
 session_start();
+/*
 include_once('connexion.php');
 $connexion = connexionBd();
 
 $requete = "SELECT * from Destination";
 $count = $connexion->query($requete);
 $resultat = $count->fetchALL(PDO::FETCH_OBJ);
-
+*/
 ?>
 
 
@@ -35,31 +30,58 @@ $resultat = $count->fetchALL(PDO::FETCH_OBJ);
         <?php require_once('appelHeader.php');?>
    </header>
    <main>
-    <br><br>
-    <caption>Destinations possibles : </caption>
-    <table>
-        <tr><th>id_voyage</th><th>nom</th><th>description</th><th>Type transport</th><th>nombre de places</th><th>nombres reservés</th><th>prix</th><th>Places handicapés</th><th>Images</th></tr>
-        <?php foreach($resultat as $key => $values):?> <!-- à changer !-->
-            <tr>       
-            <?php foreach($values as $k => $v):?>             
-               <td><a href="sejour.php?id_destination=<?=$values->id_destination?>"><?=$v?></a></td>               
-            <?php endforeach;?>
-            </tr>
-        <?php endforeach;?>
-    </table>
-    <br><br>
-       <p>Sur ce site, vous pouvez voir les différents voyages qu'il est possible de réserver, la possibilité de s'inscrire, se connecter et se déconnecter. Bien sûr, l'affichage des liens tels qu'il est fait ne sera pas fait ici, mais dans presentation_voyages.php, avec de l'esthétique.<br><br>
-           User : root | Pas de password pour accéder à la Base de données -> Fichier voyages.sql du dossier SQL).</p><br><br>
-       <p>Connexion à un compte admin afin de gérer les données : email : oui@gmail.com    mdp : oui</p>
-       <p>Connexion à un compte user afin de gérer les données : email : monEmail@gmail.com   mdp : monMdp</p>
-       <p>Pour accèder à la partie "L'administrateur peut gérer les données", il faut se connecter au compte administrateur avec les coordonnées ci-dessus et cliquer
-           ensuite sur "Gérer les données" dans le header.</p>
-       <p>Note : L'image "livre-de-voyage-31850289.jpg" dans le dossier "Site_Voyages" sert d'image test pour ajouter un voyage. Pour le moment, l'input FILE récupère toutes sortes de fichiers.</p>
-       <p>La partie réservations est quasiment terminée (quelques détails restants). La partie est disponible depuis ce projet.</p>
-    <a href="reservations.php">Je veux réserver</a>
+       <h1 id="index-title">Bienvenue sur TripAirplanes</h1>
+       <section class="index-flex">
+           <article class="index-subflex">
+               <img src="images/site/index-part1.jpg" alt="TripAirplanes">
+           </article>
+           <article class="index-subflex">
+               <h1>TripAirplanes : Le site de réservation de voyages en ligne</h1>
+               <p>TripAirplanes est une compagnie de voyages qui vous proposent plus d'une centaine de réservations possibles dans des
+                   dizaines de pays pour un prix attractif et une expérience inoubliable.
+               </p>
+               <p>
+                   TripAirplanes, c'est aussi une compagnie qui vous proposent des séjours de 7 jours, avec des activités ludiques et avec une vue
+                   à couper le souffle. Pour profiter de nos voyages, inscrivez-vous dès maintenant <a href="register.php">ici !</a>
+               </p>
+           </article>
+       </section>
+
+       <section class="index-flex">
+           <article class="index-subflex">
+               <img src="images/site/index-part2.jpg" alt="TripAirplanes">
+           </article>
+           <article class="index-subflex">
+               <h1>Une société qui écoute sa clientèle</h1>
+               <p>TripAirplanes est une société qui a su s'éléver grâce à sa communauté et ses retours. En effet, nous prenons toujours soin d'offir
+                   une expérience sur notre site qui est ergonomique et agréable, tout en conservant la sécurisation des données de nos utilisateurs.
+               </p>
+               <p>
+                   Si vous faites déjà partie de la TripAirplanes Community, vous pouvez dès à présent réserver un voyage
+                   <a href="presentation_voyages.php">ici</a> ou appeller notre agence pour un entretien au 06 29 414 20424.
+               </p>
+           </article>
+       </section>
+
+       <section class="index-flex">
+           <article class="index-subflex">
+               <img src="images/site/index-part3.jpg" alt="TripAirplanes">
+           </article>
+           <article class="index-subflex">
+               <h1>Une traçabilité et un service à votre écoute</h1>
+               <p>Depuis votre profil, vous pouvez à tout moment voir les réservations que vous avez faites et supprimer votre réservation à tout instant.<br>
+
+               </p>
+               <p>Profitez d'un service client opérationnel et compétent 24h/24 les jours ouvrés. L'appel n'est pas surtaxé et nous faisons en
+                   sorte que l'appel soit pris dans les 5 minutes.<br>
+               Pour tout renseignement supplémentaire, ou problèmes à corriger, veuillez nous contacter au numéro : 06 29 414 20424 ou par mail : tripairplanes@pro.com .
+               </p>
+           </article>
+       </section>
+
     <?php require_once("footer.php");?>
    </main>
-   <script text="text/javascript" src="js/comportement.js"></script>
+   <script type="text/javascript" src="js/comportement.js"></script>
 </body>
 
 

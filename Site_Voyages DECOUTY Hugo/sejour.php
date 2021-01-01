@@ -53,7 +53,17 @@
                 <p id="infos_prix"><?=($resultat_dest->prix)*1.5?>€ : Prix Premium / <?=($resultat_dest->prix)*1.8?>€ : Prix Business</p>
             </article>
         </section>
-        <div class="button_reserv"><a href="reservations.php?id_destination=<?=$_GET['id_destination']?>">Je souhaite réserver ce voyage !</a></div>
+        <?php
+            if($resultat_dest->nb_places != $resultat_dest->nb_reserves){ //Si la réservation n'est pas complète...
+                if($resultat_dest->handicap == 'Y'){
+                    echo "<div class='button_reserv'><a href='reservations.php?id_destination=" . $_GET['id_destination'] . "&handicap=true'" . ">Je souhaite réserver ce voyage !</a></div>";
+                }else{
+                    echo "<div class='button_reserv'><a href='reservations.php?id_destination=" . $_GET['id_destination'] . "'>Je souhaite réserver ce voyage !</a></div>";
+                }
+            }else{
+                echo "<div class=\"button_reserv_complete\">Réservation complète</div>";
+            }
+        ?>
     </main>
 <br><br>
 

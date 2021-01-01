@@ -1,7 +1,21 @@
 /*CTRL + F5 pour recharger la page en nettoyant le cache*/
 /* Tout mettre dans l'ordre alphabétique */
+
+*{
+    box-sizing: border-box;
+}
+
 html{
     font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: darkred;
+}
+
+a:visited{
+    color: darkred;
 }
 
 .cache{
@@ -16,11 +30,12 @@ html{
 .cadre_header{
     display: flex;
     position: fixed;
-    top: 0%;
-    background-color: #000000;
+    top: 0;
+    background-image: linear-gradient(lightgray, darkgray);
     color: white;
     height: 20vh;
     width: 100%;
+    z-index: 1000;
 }
 
 .cadre_header a{
@@ -28,7 +43,7 @@ html{
     font-style: oblique;
     font-variant: all-small-caps;
     color: white;
-    font-size: 20px;
+    font-size: 20px; /*16px si 100% en zoom*/
     cursor: pointer;
 }
 #image_header{
@@ -37,19 +52,19 @@ html{
 #image_header img{
     width: 100%;
     height: 20vh;
+    overflow: hidden;
 
 }
 
-ul{
+#ul-header{
     margin-left: 5%;
     padding-top: 12vh;
     display: flex;
     justify-content: space-around;
     width: 75%;
-
-
 }
-li{
+
+#ul-header>li{
     /*display: inline;*/
     width: 25%;
     border-left: 1px solid white;
@@ -135,13 +150,57 @@ textarea{
 
 }
 
+#destination{
+    width: 200px;
+}
+
+/* -----------------------LOGIN.PHP ---------------- */
+
+#form-login{
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 50px 0px 50px 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 20%;
+}
+
+#form-login>fieldset{
+    padding: 30px 60px 20px 60px;
+}
+
+#form-login>fieldset>p{
+    line-height: 1.6;
+}
+
+#submit-login{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#btnSubmit-connexion{
+    background-color: dimgray;
+    color: white;
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#btnSubmit-connexion:hover{
+    transition: 2s;
+    background-color: snow;
+    color: #000000;
+}
+
 /* -----------------------MONPROFIL.PHP------------- */
 
 #table_reservation{
     width: 50%;
     margin: auto;
     border: 2px solid black;
-    border-bottom: none;
     border-collapse: collapse;
 
 }
@@ -159,6 +218,46 @@ textarea{
 
 #tr_reservation td{
     padding: 1em;
+}
+
+#form-profile, #reserv-profile{
+    border-bottom: 2px solid goldenrod;
+    margin: 0 3rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+#reserv-profile{
+    border: none;
+}
+
+#nb-reserv-profile{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#form-profile p{
+    margin-top: 1rem;
+}
+
+.erreur-profile{
+    background-color: sandybrown;
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-bottom: 1rem;
+}
+
+.erreur-profile img{
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.erreur-profile p{
+    font-size: 20px;
 }
 
 /* ------------------------SEJOUR.PHP-------------- */
@@ -237,12 +336,7 @@ textarea{
     margin-bottom: 1rem;
 }
 
-#economic, #business, #premium, #handicap_reserv{
-    width: 35px;
-    margin-top: 0.5rem;
-    margin-left: 2em;
-}
-.button_reserv{
+.button_reserv, .button_reserv_complete{
     font-size: 24px;
     align-self: center;
     width: 500px;
@@ -255,11 +349,30 @@ textarea{
     margin: auto;
     margin-top: 3rem;
 }
+
+.button_reserv_complete{
+    background-color: grey;
+    color: black;
+}
+
+.button_reserv a, .button_reserv_complete a{
+    color: black;
+}
 /* --- REGISTER.PHP --- */
+
+main{
+    position: relative;
+}
+
 .erreur_register{
     background-color: sandybrown;
     display: inline-block;
     height: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: -100%;
+    margin-bottom: 1rem;
 }
 
 .erreur_register img{
@@ -271,12 +384,55 @@ textarea{
 .erreur_register p{
     font-size: 20px;
 }
+
+#form-register{
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 50px 0 50px 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#form-register>fieldset{
+    padding: 30px 60px 20px 60px;
+}
+
+#form-register>fieldset>p{
+    line-height: 1.6;
+}
+
+#submit-register{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+#btnSubmit-register{
+    background-color: dimgray;
+    color: white;
+    width: 120px;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 2.5px;
+}
+
+#btnSubmit-register:hover{
+    transition: 2s;
+    background-color: snow;
+    color: #000000;
+    letter-spacing: 3px;
+}
 /* --- RESERVATIONS.PHP  --- */
 
 .erreur_reserv{
     background-color: sandybrown;
     display: inline-block;
     height: 25px;
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translate(-50%, 0%);
 }
 
 .erreur_reserv img{
@@ -289,9 +445,317 @@ textarea{
     font-size: 20px;
 }
 
+/* ------------ PRESENTATION_VOYAGES.PHP -------------- */
+/* Barre de recherche à faire sous "Voyages disponibles" */
+
+#h2-show{
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+
+.flex-voyages{
+    display: flex;
+}
+
+#flex-voyage-1, #flex-voyage-2{
+    width: 50%;
+}
+
+.ul-voyages{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.ul-voyages>li{
+    border: 2px solid black;
+    margin-bottom: 1rem;
+    padding: 1rem 2rem 2rem 1rem;
+}
+
+.show_more_voyages{
+    border: 2px solid white;
+    text-align: center;
+    background-color: lightgray;
+    width: 140px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 3px;
+}
+
+.show_more_voyages a{
+    text-decoration: none;
+    line-height: 2.2;
+    color: black;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
+.show_more_voyages:hover{
+    transition: 1s;
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    font-weight: bolder;
+}
+
+.ul-voyages>li>h3{
+    font-size: 25px;
+    font-weight: bolder;
+    font-variant-caps: all-small-caps;
+}
+
+/*Description + Symboles*/
+.ul-voyages li p:nth-of-type(1), #symbols-voyages{
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+/* Prix */
+#flex-voyage-2 p:nth-of-type(1){
+    font-weight: 600;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: 0.5rem;
+}
+
+/*Nombre de places*/
+#flex-voyage-2 p:nth-of-type(2){
+    text-align: right;
+}
+
+#complete_reserv{
+    color: black;
+    font-weight: 800;
+    background-color: bisque;
+    padding: 0.2rem 0.5rem;
+}
+
+#almost-complete_reserv{
+    background-color: indianred;
+    font-weight: bolder;
+    padding: 0.2rem 0.5rem;
+}
+
+/* --- RESERVATIONS.PHP --- */
+
+#info_reserv{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: oblique;
+}
+#form-reserv{
+    border: 2px solid black;
+    padding: 2rem;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 30px 0;
+}
+
+#form-reserv p{
+    margin-bottom: 0.8rem;
+}
+
+#form-reserv p:nth-of-type(3), #handicap-p{ /* nth-of-type(3) -> Date_reservation */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid goldenrod;
+}
+
+#form-reserv label{
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}
+
+#billet{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    word-break: keep-all;
+}
+
+#billet input{
+    width: 50px;
+}
+#economic, #business, #premium, #handicap_reserv{
+    width: 35px;
+    margin: 0.5rem 0.5em 0 2em;
+
+}
+
+#resultat-reserv{
+    display: inline-block;
+    background-color: RGBA(220, 220, 220, 0.5);
+    padding: 1rem;
+    border: 1px solid black;
+    font-weight: 500;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#economic{
+    margin-left: 0;
+}
+
+#submit-reserv input{
+    background-color: whitesmoke;
+    color: black;
+    font-size: 20px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 1.5px;
+}
+
+#submit-reserv input:hover{
+    transition: 2s;
+    background-color: #020202;
+    color: white;
+    font-size: 20px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 1.5px;
+}
+
+/* --- FOOTER.PHP --- */
+#relative-footer{
+    position: relative;
+}
+
+body {
+    margin-bottom: 10rem;
+}
 
 
+footer{
+    margin-top: 2rem;
+    background-color: dimgrey;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    clear: both;
+}
+
+footer p{
+    color: whitesmoke;
+    padding: 0 3rem;
+    line-height: 10vh;
+    letter-spacing: 1.2px;
+}
+
+footer p:nth-of-type(1){
+    float: left;
+}
+
+footer p:nth-of-type(2){
+    float: right;
+}
+
+/* --- INDEX.PHP --- */
+#index-title{
+    font-size: 40px;
+    letter-spacing: 1.3px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 3rem;
+}
+
+h1{
+    font-variant-caps: all-small-caps;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.index-flex{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 12rem;
+    /*border: 2px solid black;*/
+    margin-bottom: 4rem;
+}
 
 
+.index-subflex:nth-of-type(1){
+    width: 25%;
+    overflow: hidden;
+    border-right: 2px solid goldenrod;
+}
 
+.index-subflex:nth-of-type(2){
+    width: 55%;
+    word-break: keep-all;
+    padding: 0 2rem;
+    line-height: 1.5;
+}
+
+.index-subflex:nth-of-type(2) h1{
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.index-subflex:nth-of-type(2) p{
+    font-size: 16px;
+    padding-bottom: 1rem;
+}
+
+/* --- REMBOURSEMENT.PHP --- */
+
+#cadre-remboursement{
+    display: inline-block;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: absolute;
+    width: 60%;
+    min-width: 60%;
+    left: 50%;
+    padding: 3rem;
+    transform: translate(-50%, 0%);
+    background-color: RGBA(173,173,173, 0.6);
+}
+
+#cadre-remboursement p{
+    margin-bottom: 1rem;
+    font-size: 20px;
+}
+
+#buttons-remboursement{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+}
+
+#rembourser{
+    background-color: forestgreen;
+    color: black;
+    padding: 1rem;
+    cursor: pointer;
+    border: 1px solid green;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#buttons-remboursement a{
+    background-color: indianred;
+    color: black;
+    font-size: 20px;
+    padding: 0 1rem;
+    padding-top: 1.2rem;
+    /*line-height: 2.9;*/
+    border: 1px solid palevioletred;
+}
+
+#rembourser:hover{
+    font-weight: 600;
+    border: 2px solid darkgreen;
+    text-decoration: underline;
+}
+
+#buttons-remboursement a:hover{
+    font-weight: 600;
+    border: 2px solid darkred;
+    text-decoration: underline;
+}
 
